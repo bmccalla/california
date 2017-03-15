@@ -49,10 +49,10 @@ h2 {
 }
 
 h3 {
-  font-size: 70px;
+  font-size: 75px;
   font-family: 'Fredericka the Great', cursive;
   text-align:  center;
-   line-height: 1.5;
+   line-height: 1.0;
 }
 
 h4 {
@@ -63,8 +63,14 @@ h4 {
 }
 
 h5 {
+  text-align: center;
+  font-size: 65px;
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: auto;
 
 }
+
+
 
 h6 {
 
@@ -120,43 +126,62 @@ th {
   background-color: inherit;
   padding: 7px;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 35px;
+  font-size: 40px;
+
 }
 
 td {
   padding: 7px;
-  font-size: 25px;
+  font-size: 24px;
   text-align: center;
 }
 
  tr:hover {background-color: #ccdfff}
 
-@media (max-width: 600px) {
-  table {
-      width: 100%;
-  }
+ @media
+ only screen and (max-width: 760px),
+ (min-device-width: 768px) and (max-device-width: 1024px)  {
 
-  thead {
-    display: none;
-  }
 
-  tr {
-    border: 1px solid: #ea4335;
-    display: block;
-    margin: 7px 0;
-  }
+ 	table, thead, tbody, th, td, tr {
+ 		display: block;
+ 	}
 
-  td {
-    display: block;
-    text-align: right;
-  }
 
-  td:before {
-    content: attr(aria-label);
-    float: left;
-    font-weight: bold;
-  }
-}
+ 	thead tr {
+ 		position: absolute;
+ 		top: -9999px;
+ 		left: -9999px;
+ 	}
+
+ 	tr { border: 1px solid #ccc; }
+
+ 	td {
+
+ 		border: none;
+ 		border-bottom: 1px solid #eee;
+ 		position: relative;
+ 		padding-left: 50%;
+ 	}
+
+ 	td:before {
+ 		position: absolute;
+ 		top: 6px;
+ 		left: 6px;
+ 		width: 45%;
+ 		padding-right: 10px;
+ 		white-space: nowrap;
+ 	}
+
+
+ 	td:nth-of-type(1):before { content: "Name"; }
+ 	td:nth-of-type(2):before { content: "Department"; }
+ 	td:nth-of-type(3):before { content: "Email"; }
+ 	td:nth-of-type(4):before { content: "Phone"; }
+ 	td:nth-of-type(5):before { content: "Website"; }
+
+ }
+
 
 /*** image styles ***/
 
@@ -180,6 +205,7 @@ img  {
     width: auto;
     max-width: 100%;
     height: auto;
+
 
 }
 
@@ -220,9 +246,6 @@ img  {
 }
 
 
-/*** link styles ***/
-
-
 a:link {
 color: black;
 text-decoration: none;
@@ -235,15 +258,15 @@ a:visited {
 }
 
 a:hover {
-color:black;
-text-decoration: underline;
+border-bottom: 3px solid black;
 
 }
 
 a:active {
-  color:grey;
+  color:grey ;
 text-decoration: none;
 }
+
 
 /*---------------
  Odin override
